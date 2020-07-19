@@ -19,7 +19,7 @@ class Post(MPTTModel):
         blank=True,
         null=True,
         related_name="child")
-    like = models.IntegerField(default=0)
+    like = models.IntegerField(default=0, blank=True, null=True)
     user_like = models.ManyToManyField(User, verbose_name="Кто лайкнул", related_name="users_like")
 
     def __str__(self):
